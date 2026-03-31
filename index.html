@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Min hjemmeside</title>
+    <link rel="stylesheet" href="style.css">  
+</head>
+<body>
+    <div class="cursor"></div>
+    
+    <nav class="navbar">
+        <div class="logo">LOGO</div>
+    
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+    
+        <ul class="menu" id="menu">
+            <li><a href="#">Kultur</a></li>
+            <li><a href="#">Skoletjenesten</a></li>
+            <li><a href="#">Socialt arbejde</a></li>
+            <li><a href="#">Uddannelse</a></li>
+            <li><a href="#">Foreninger</a></li>
+            <li><a href="#">Om os</a></li>
+            <li><a href="#">Webshop</a></li>
+            <li><a href="#">Dagens Grønland</a></li>
+        </ul>
+    </nav>
+    <script>
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.top = e.clientY + "px";
+            cursor.style.left = e.clientX + "px";
+        });
+
+        // Find alle links
+        const links = document.querySelectorAll("a");
+
+        links.forEach(link => {
+            link.addEventListener("mouseenter", () => {
+                cursor.classList.add("hover");
+            });
+
+            link.addEventListener("mouseleave", () => {
+                cursor.classList.remove("hover");
+            });
+        });
+
+
+        
+        const toggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+    
+        toggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>
