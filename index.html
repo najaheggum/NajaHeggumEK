@@ -2,19 +2,20 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Min hjemmeside</title>
     <link rel="stylesheet" href="style.css">  
 </head>
 <body>
+    <!-- curser -->
     <div class="cursor"></div>
     
+    <!-- menu -->
     <nav class="navbar">
         <div class="logo">LOGO</div>
-    
         <div class="menu-toggle" id="menu-toggle">
             ☰
         </div>
-    
         <ul class="menu" id="menu">
             <li><a href="#">Kultur</a></li>
             <li><a href="#">Skoletjenesten</a></li>
@@ -26,6 +27,11 @@
             <li><a href="#">Dagens Grønland</a></li>
         </ul>
     </nav>
+
+
+    <p>hej</p>
+
+
     <script>
         const cursor = document.querySelector(".cursor");
 
@@ -48,7 +54,7 @@
         });
 
 
-        
+
         const toggle = document.getElementById("menu-toggle");
         const menu = document.getElementById("menu");
     

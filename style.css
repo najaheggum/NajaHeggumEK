@@ -24,21 +24,21 @@ html, body {
     height: 40px;
 }
 
-
+/* Navbar */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 20px;
     background-color: white;
-} 
+}
 
 /* Logo */
 .logo {
     font-weight: bold;
 }
 
-/* Menu */
+/* Menu (desktop) */
 .menu {
     list-style: none;
     display: flex;
@@ -50,15 +50,22 @@ html, body {
     color: black;
 }
 
-/* Burger ikon */
+/* Burger ikon (skjult på desktop) */
 .menu-toggle {
     display: none;
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
 }
 
 /* 📱 Mobil */
 @media (max-width: 768px) {
+
+    /* Vis burger */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Skjul menu */
     .menu {
         position: absolute;
         top: 60px;
@@ -71,11 +78,8 @@ html, body {
         padding: 20px 0;
     }
 
+    /* Når menu er aktiv */
     .menu.active {
         display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
     }
 }
