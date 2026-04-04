@@ -7,32 +7,48 @@
     <link rel="stylesheet" href="style.css">  
 </head>
 <body>
-    <!-- curser -->
+    <!-- custom cursor -->
     <div class="cursor"></div>
     
     <!-- menu -->
     <nav class="navbar">
-        <div class="logo">LOGO</div>
+        <div class="logo">
+            <img src="images/ALUU.png" alt="Logo">
+        </div>
         <div class="menu-toggle" id="menu-toggle">
             ☰
         </div>
         <ul class="menu" id="menu">
-            <li><a href="#">Kultur</a></li>
-            <li><a href="#">Skoletjenesten</a></li>
-            <li><a href="#">Socialt arbejde</a></li>
+            <li><a href="#">Kalender</a></li>
+            <li><a href="#">Om Os</a></li>
+            <li><a href="#">Socialt Arbejde</a></li>
             <li><a href="#">Uddannelse</a></li>
-            <li><a href="#">Foreninger</a></li>
-            <li><a href="#">Om os</a></li>
             <li><a href="#">Webshop</a></li>
             <li><a href="#">Dagens Grønland</a></li>
         </ul>
     </nav>
 
-
-    <p>Hej far</p>
-
+    <div class="content-section">
+        <!-- Første div (venstre) -->
+        <div class="content-block">
+            <video autoplay loop muted playsinline class="responsive-video">
+                <source src="videos/GIFYAY.mp4" type="video/mp4">
+            </video>
+        </div>
+    
+        <!-- Midterste div (større) -->
+        <div class="content-block middle">
+            <img src="images/webster.png" alt="7 dage med kultur" class="responsive-image">
+        </div>
+    
+        <!-- Tredje div (højre, tom) -->
+        <div class="content-block">
+            <!-- tom -->
+        </div>
+    </div>
 
     <script>
+        /* custom cursor */
         const cursor = document.querySelector(".cursor");
 
         document.addEventListener("mousemove", (e) => {
@@ -40,21 +56,18 @@
             cursor.style.left = e.clientX + "px";
         });
 
-        // Find alle links
         const links = document.querySelectorAll("a");
 
         links.forEach(link => {
             link.addEventListener("mouseenter", () => {
                 cursor.classList.add("hover");
             });
-
             link.addEventListener("mouseleave", () => {
                 cursor.classList.remove("hover");
             });
         });
 
-
-
+        /* burger menu */
         const toggle = document.getElementById("menu-toggle");
         const menu = document.getElementById("menu");
     

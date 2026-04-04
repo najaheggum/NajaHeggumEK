@@ -1,6 +1,8 @@
 /* Skjul normal cursor */
 html, body {
     cursor: none;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
 }
 
 /* Custom cursor */
@@ -18,10 +20,20 @@ html, body {
     transition: transform 0.15s ease, width 0.2s, height 0.2s;
 }
 
-/* Når den "vokser" */
 .cursor.hover {
     width: 40px;
     height: 40px;
+}
+
+/* Baggrund */
+body {
+    background-color: #B6F3FF;
+}
+
+/* Logo */
+.logo img {
+    height: 40px;
+    width: auto;
 }
 
 /* Navbar */
@@ -30,15 +42,9 @@ html, body {
     align-items: center;
     justify-content: space-between;
     padding: 15px 20px;
-    background-color: white;
+    background-color: #B6F3FF;
 }
 
-/* Logo */
-.logo {
-    font-weight: bold;
-}
-
-/* Menu (desktop) */
 .menu {
     list-style: none;
     display: flex;
@@ -48,24 +54,60 @@ html, body {
 .menu li a {
     text-decoration: none;
     color: black;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
-/* Burger ikon (skjult på desktop) */
+/* Burger icon (mobil) */
 .menu-toggle {
     display: none;
     font-size: 28px;
     cursor: pointer;
 }
 
-/* 📱 Mobil */
-@media (max-width: 768px) {
+/* Content: tre lige store divs */
+.content-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centrer hele sektionen */
+    align-items: flex-start; /* top-juster indhold */
+    gap: 20px;
+    margin: 20px 0;
+}
 
-    /* Vis burger */
+/* Alle blocks i content-sektionen */
+.content-block {
+    flex: 1 1 20%;   /* standard divs (venstre og højre) fylder 20% hver */
+    text-align: center;
+}
+
+/* Midterste div: større */
+.content-block.middle {
+    flex: 2 1 40%;   /* midterste div fylder dobbelt så meget som de andre */
+}
+
+/* Video styling */
+.responsive-video {
+    width: 100%;     /* fylder hele blocken */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Billede styling */
+.responsive-image {
+    width: 100%;     /* fylder hele blocken */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Mobilvenligt */
+@media (max-width: 768px) {
+    /* Burger menu */
     .menu-toggle {
         display: block;
     }
 
-    /* Skjul menu */
     .menu {
         position: absolute;
         top: 60px;
@@ -78,8 +120,22 @@ html, body {
         padding: 20px 0;
     }
 
-    /* Når menu er aktiv */
     .menu.active {
         display: flex;
+    }
+
+    /* Stak content under hinanden */
+    .content-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-block {
+        flex: 1 1 90%;  /* fylder næsten hele bredden */
+    }
+
+    .responsive-video,
+    .responsive-image {
+        width: 100%;
     }
 }
